@@ -38,7 +38,7 @@ setTimeout(()=>{const b=document.getElementById('boot-sequence'),m=document.getE
 document.querySelectorAll('.menu-btn').forEach(btn=>btn.addEventListener('click',()=>{const section=btn.getAttribute('data-section');window.location.hash=section;showSection(section)}));
 window.addEventListener('hashchange',loadSection);
 const themes=['','theme-amber','theme-white'];let ct=0;document.addEventListener('keydown',e=>{if(e.key==='c'||e.key==='C'){document.body.classList.remove(...themes);ct=(ct+1)%themes.length;if(themes[ct])document.body.classList.add(themes[ct])}});
-async function fetchDiscordMembers(){try{const r=await fetch('https://discord.com/api/guilds/1098982776855957524/widget.json');if(!r.ok)throw new Error('Widget unavailable');const d=await r.json();document.getElementById('player-count').textContent=d.presence_count||d.members?.length||42}catch{document.getElementById('player-count').textContent='42'}}
+async function fetchDiscordMembers(){try{const r=await fetch('https://discord.com/api/guilds/1241990830940491878/widget.json');if(!r.ok)throw new Error('Widget unavailable');const d=await r.json();document.getElementById('player-count').textContent=d.presence_count||d.members?.length||42}catch{document.getElementById('player-count').textContent='42'}}
 fetchDiscordMembers();setInterval(fetchDiscordMembers,60000);
 </script>
 </body>
